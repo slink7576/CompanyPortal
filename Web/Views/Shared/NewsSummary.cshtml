@@ -1,5 +1,6 @@
 ﻿
 @model NewsItem
+@using Web.Extensions
 @using Microsoft.AspNetCore.Identity
 @inject UserManager<ApplicationUser> _userManager
 
@@ -20,7 +21,7 @@
     <div class="col-md-12 mt-2 row">
         <div class="col-md-4 row text-center">
 
-            @if (User.Identity.Name != null && await _userManager.IsInRoleAsync(await _userManager.FindByNameAsync(User.Identity.Name), "Admin"))
+            @if (User.Identity.Name != null && await _userManager.IsInAdminRoleAsync(User))
             {
                 <form asp-action="Delete" method="post" class="ml-1">
                     <button type="button" class="btn btn-info ml-1" onclick="Like(@Model.Id)">
@@ -70,7 +71,7 @@
                         <i class="fas fa-chart-bar"></i>
                     </a>
                 </div>
-               
+
 
             }
 

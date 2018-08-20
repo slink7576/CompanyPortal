@@ -1,5 +1,6 @@
 ﻿
 @model Employee
+@using Web.Extensions
 @using Microsoft.AspNetCore.Identity
 @inject UserManager<ApplicationUser> _userManager
 
@@ -48,39 +49,39 @@
     <div class="col-md-3">
 
 
-        @if (User.Identity.Name != null && await _userManager.IsInRoleAsync(await _userManager.FindByNameAsync(User.Identity.Name), "Admin"))
-        { 
+        @if (User.Identity.Name != null && await _userManager.IsInAdminRoleAsync(User))
+        {
 
-        
+
             <form asp-action="Delete" method="post">
 
                 <div class="input-group">
 
 
-                   
-                        <a class="btn btn-primary mr-2"
-                           asp-action="Edit"
-                           asp-controller="Account"
-                           asp-route-Id="@Model.Id">
-                            <i class="fas fa-user-edit"></i>
-                        </a>
-                   
-                    <input type="hidden" name="Id" value="@Model.Id" />
-                 
-                        <button type="submit" class="btn btn-danger">
 
-                            <i class="fas fa-user-times"></i>
-                        </button>
-                   
+                    <a class="btn btn-primary mr-2"
+                       asp-action="Edit"
+                       asp-controller="Account"
+                       asp-route-Id="@Model.Id">
+                        <i class="fas fa-user-edit"></i>
+                    </a>
+
+                    <input type="hidden" name="Id" value="@Model.Id" />
+
+                    <button type="submit" class="btn btn-danger">
+
+                        <i class="fas fa-user-times"></i>
+                    </button>
+
                 </div>
             </form>
         }
         else
         {
-            
+
 
         }
-        </div>
+    </div>
 
 
 

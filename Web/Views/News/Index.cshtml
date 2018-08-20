@@ -1,5 +1,6 @@
 ﻿@model NewsItemListViewModel
 
+@using Web.Extensions
 @using Microsoft.AspNetCore.Identity
 @inject UserManager<ApplicationUser> _userManager
 
@@ -7,11 +8,11 @@
 
 <div class="container pt-2">
 
-    @if (User.Identity.Name != null && await _userManager.IsInRoleAsync(await _userManager.FindByNameAsync(User.Identity.Name), "Admin"))
+   
+    @if (User.Identity.Name != null && await _userManager.IsInAdminRoleAsync(User))
     {
         @Html.Partial("NewsBar")
     }
-
 
 
 

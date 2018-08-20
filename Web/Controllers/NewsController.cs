@@ -9,32 +9,26 @@ using Infrastructure.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Web.Services;
 using Web.ViewModels;
 
 namespace Web.Controllers
 {
     public class NewsController : Controller
     {
-        INewsRepository _repositoryNews;
-        IAsyncRepository<ChartItem> _repositoryChart;
-        IEmployeeRepository _employeeRepository;
-        INewsService _newsService;
+        NewsDataService _newsViewModelService;
         UserManager<ApplicationUser> _userManager;
         public int PageSize = 4;
 
-        public NewsController(INewsRepository repositoryNews, IAsyncRepository<ChartItem> repositoryChart,
-            INewsService newsService, UserManager<ApplicationUser> userManager, IEmployeeRepository employeeRepository)
+        public NewsController(UserManager<ApplicationUser> userManager, NewsDataService newsViewModelService)
         {
-            _repositoryNews = repositoryNews;
-            _repositoryChart = repositoryChart;
             _userManager = userManager;
-            _newsService = newsService;
-            _employeeRepository = employeeRepository;
+            _newsViewModelService = newsViewModelService;
         }
 
         public async Task<IActionResult> Index(int page = 1)
         {
-            var news = await _repositoryNews.ListAllAsync();
+            var news = await _newsViewModelService.ListAllAsync();
             var view = new NewsItemListViewModel
             {
                 News = news.OrderBy(c => c.Created).Reverse()
@@ -59,7 +53,7 @@ namespace Web.Controllers
         {
             try
             {
-                await _newsService.DeleteNewsItem(id);
+                await _newsViewModelService.DeleteNewsItemAsync(id);
             }
              catch(Exception)
             {
@@ -73,7 +67,7 @@ namespace Web.Controllers
         {
             if (id != null)
             {
-                return View(await _repositoryNews.GetByIdAsync((int)id));
+                return View(await _newsViewModelService.GetByIdAsync((int)id));
             }
             else
             {
@@ -91,12 +85,12 @@ namespace Web.Controllers
                 news.Author = User.Identity.Name;
                 if (id != null)
                 {
-                    await _newsService.UpdateNewsItem((int)id, news.Header, news.Body, news.Author, news.PhotoURL);
+                    await _newsViewModelService.UpdateNewsItemAsync(news, (int)id);
                     return RedirectToAction(nameof(Index));
                 }
                 else
                 {
-                    await _repositoryNews.AddAsync(news);
+                    await _newsViewModelService.AddAsync(news);
                     return RedirectToAction(nameof(Index));
                 }
             }
@@ -110,7 +104,7 @@ namespace Web.Controllers
         public async Task<IActionResult> Info(int id, string ReturnUrl)
         {
             ViewBag.ReturnUrl = ReturnUrl;
-            return View(await _repositoryNews.GetByIdAsync(id));
+            return View(await _newsViewModelService.GetByIdAsync(id));
         }
     }
 }

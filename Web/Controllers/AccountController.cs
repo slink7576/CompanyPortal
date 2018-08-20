@@ -9,6 +9,7 @@ using Infrastructure.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Web.Services;
 using Web.ViewModels;
 
 namespace Web.Controllers
@@ -18,18 +19,18 @@ namespace Web.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly IEmployeeService _employeeService;
-        private readonly IEmployeeRepository _employeeRepository;
+        private readonly EmployeeDataService _employeeViewModelService;
+       
 
         public int PageSize = 6;
 
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager,
-            IEmployeeService employeeService, IEmployeeRepository employeeRepository)
+            EmployeeDataService employeeViewModelService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _employeeService = employeeService;
-            _employeeRepository = employeeRepository;
+            _employeeViewModelService = employeeViewModelService;
+
         }
 
         #region Login/Register Actions
@@ -88,8 +89,8 @@ namespace Web.Controllers
                 if (result.Succeeded)
                 {
                     var employee = new Employee { Name = model.Name, PhotoURL = model.PhotoURL, Position = model.Position, Surname = model.Surname, Email = model.Email, PhoneNumber = model.Phone };
-                    await _employeeRepository.AddAsync(employee);
-                    employee = await _employeeRepository.GetByEmailAsync(employee.Email);
+                    await _employeeViewModelService.AddAsync(employee);
+                    employee = await _employeeViewModelService.GetByEmailAsync(employee.Email);
                     user.EmployerId = employee.Id;
                     await _userManager.UpdateAsync(user);
                     await _signInManager.SignInAsync(user, false);
@@ -118,12 +119,12 @@ namespace Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
-            var employee = await _employeeRepository.GetByIdAsync(id);
+            var employee = await _employeeViewModelService.GetByIdAsync(id);
             var user = await _userManager.FindByEmailAsync(employee.Email);
             var result = await _userManager.DeleteAsync(user);
             if (result.Succeeded)
             {
-                await _employeeRepository.DeleteAsync(employee);
+                await _employeeViewModelService.DeleteAsync(employee);
                 return RedirectToAction(nameof(Index));
             }
             else
@@ -138,7 +139,7 @@ namespace Web.Controllers
             {
                 page = 1;
             }   
-            var employers = await _employeeRepository.ListAllAsync();
+            var employers = await _employeeViewModelService.ListAllAsync();
             var sortedEmployers = employers
                 .Where(p => (p.Position.ToString() == position || position == "") &&
                     (p.Name.ToLower().Contains(name.ToLower()) || p.Surname.ToLower().Contains(name.ToLower())))
@@ -198,7 +199,7 @@ namespace Web.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var currentUser = await _userManager.FindByNameAsync(User.Identity.Name);
-            var currentEmployee = await _employeeRepository.GetByIdAsync(currentUser.EmployerId);
+            var currentEmployee = await _employeeViewModelService.GetByIdAsync(currentUser.EmployerId);
             if (!_userManager.GetUsersInRoleAsync("Admin").Result.Contains(currentUser))
             {
                 if (currentEmployee.Id != currentUser.EmployerId)
@@ -206,7 +207,7 @@ namespace Web.Controllers
                     return View("AccessDenied", "Only owner or admin can edit user profile");
                 }
             }
-            var employee = await _employeeRepository.GetByIdAsync(id);
+            var employee = await _employeeViewModelService.GetByIdAsync(id);
             if (currentUser != null && employee != null)
             {
                 return View(new RegisterViewModel
@@ -239,16 +240,16 @@ namespace Web.Controllers
                     return View("AccessDenied", "Only owner or admin can edit user profile");
                 }
             }
-            var employee = await _employeeRepository.GetByEmailAsync(model.Email);
+            var employee = await _employeeViewModelService.GetByEmailAsync(model.Email);
             var updateuser = new Employee { Name = model.Name, Surname = model.Surname, PhotoURL = model.PhotoURL, Position = model.Position, Email = model.Email, PhoneNumber = model.Phone };
-            await _employeeService.Update(employee.Id, updateuser);
+            await _employeeViewModelService.UpdateAsync(employee.Id, updateuser);
             return RedirectToAction("Index", "News");
         }
 
         public async Task<IActionResult> Info(int id, string ReturnUrl)
         {
             ViewBag.ReturnUrl = ReturnUrl;
-            var result = await _employeeRepository.GetByIdAsync(id);
+            var result = await _employeeViewModelService.GetByIdAsync(id);
             if (result != null)
             {
                 return View("AccountSummaryFull", result);

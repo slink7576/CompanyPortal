@@ -15,6 +15,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Web.Hubs;
+using Web.Services;
 
 namespace Web
 {
@@ -34,7 +35,6 @@ namespace Web
             services.AddDbContext<ApplicationDbContext>(c =>
               c.UseSqlServer(Configuration.GetConnectionString("CatalogConnection")));
 
-            // Add Identity DbContext
             services.AddDbContext<AppIdentityDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
@@ -49,6 +49,8 @@ namespace Web
             services.AddScoped<INewsRepository, NewsRepository>();
             services.AddScoped<IRepository<ChartItem>, EfRepository<ChartItem>>();
             services.AddScoped<IAsyncRepository<Employee>, EfRepository<Employee>>();
+            services.AddScoped<NewsDataService>();
+            services.AddScoped<EmployeeDataService>();
             services.AddMvc();
 
         }
