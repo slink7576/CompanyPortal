@@ -1,0 +1,56 @@
+﻿
+@model LoginViewModel
+
+<div class="container mt-2">
+
+    <h4>Please login</h4>
+    <hr />
+    <form method="post" asp-controller="Account" asp-action="Login"
+          asp-route-returnUrl="@Model.ReturnUrl">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+
+
+            <label class="text-secondary" asp-for="Email"></label>
+            <div>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="btn btn-secondary">
+                        <i class="far fa-envelope pt-1"></i>
+                    </div>
+                    
+                </div>
+                <input asp-for="Email" class="form-control" />
+            </div>
+            </div>
+        <div>
+            
+
+            <label class="text-secondary" asp-for="Password"></label>
+            <div>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="btn btn-secondary">
+                        <i class="fas fa-key pt-1"></i>
+                    </div>
+                </div>
+                    <input asp-for="Password" class="form-control" />
+                </div>
+            </div>
+            <div>
+
+                <div class="checkbox">
+                    <label class="text-secondary" asp-for="RememberMe"></label>
+                    <input asp-for="RememberMe" />
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <a asp-action="Index" asp-controller="News" class="btn btn-secondary">Back</a>
+            </div>
+</form>
+</div>

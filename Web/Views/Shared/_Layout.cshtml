@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+
+   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+          crossorigin="anonymous"
+          asp-fallback-test-class="fas"
+          asp-fallback-href-include="lib/font-awesome/web-fonts-with-css/css/*.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous"
+          asp-fallback-test-class="btn"
+          asp-fallback-href-include="lib/bootstrap/dist/css/.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"
+            asp-fallback-src-include="lib/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" asp-href-include="lib/theme/css/dark-theme.css" />
+
+
+
+
+    <title>EmployeeDirectory</title>
+</head>
+<body>
+    <div class="navbar navbar-expand-md " role="navigation">
+
+        <a class="navbar-brand text-light"
+           asp-action="Index"
+           asp-controller="News"
+           asp-route-page="1"
+           asp-route-position=>News</a>
+        
+
+
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item  text-light">
+                    <a class="nav-link"
+                       asp-action="Index"
+                       asp-controller="Account"
+                       asp-route-page="1"
+                       asp-route-position=>Employers</a>
+                </li>
+                <li class="nav-item  text-light">
+                    <a class="nav-link"
+                       asp-action="Index"
+                       asp-controller="Chat"
+                       asp-route-position=>Chat</a>
+                </li>
+
+            </ul>
+           
+
+        </div>
+       
+        <div class="text-right row">
+            @if (User.Identity.IsAuthenticated)
+            {
+
+                <a asp-controller="Account" class="nav-link" asp-action="EditMyself">@User.Identity.Name</a>
+
+
+                <form method="post" asp-controller="Account" asp-action="LogOff">
+
+                    <button class="btn btn-info mr-2" type="submit">
+                        <i class="fa fa-sign-out-alt"></i>
+                    </button>
+                </form>
+            }
+            else
+            {
+                <a asp-controller="Account" class="nav-link" asp-action="Login">Login</a>
+                <a asp-controller="Account" class="nav-link" asp-action="Register">Register</a>
+            }
+        </div>
+
+    </div>
+    <div class="container-fluid">
+
+      
+
+        @RenderBody()
+
+    </div>
+</body>
+</html>

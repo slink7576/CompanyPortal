@@ -1,0 +1,140 @@
+﻿body {
+    color: white;
+    background-color:#1b2431
+}
+hr {
+    background-color: #259cf3;
+    height: 1px;
+}
+.navbar {
+    background-color: #273142;
+}
+.pagination-but-color-inactive {
+    color: #9398a1;
+    background-color: #273142;
+    border-color: #313d4f;
+}
+.pagination-but-color-active {
+    color: white;
+    background-color: #273142;
+    border-color: #313d4f;
+}
+
+    .btn-info {
+    color: #78828c;
+    background-color: #273142;
+    border: 0;
+}
+
+    .btn-info:hover, .btn-info:active:focus, .btn-info:focus, .btn-info:active {
+        color: white !important;
+        background-color: #273142 !important;
+        border: 0 !important;
+        box-shadow: none !important;
+    }
+.img-thumbnail {
+    border-radius: 10px;
+    border: 1px solid #313d4f;
+    background-color: #273142;
+    
+    overflow: auto;
+}
+.thumbnail img {
+    
+    height: auto;
+    display: block;
+}
+.pagination-but-color-active:hover, .pagination-but-color-inactive:hover
+{
+    color:white;
+}
+.news-item {
+    color: white;
+    background-color: #273142;
+    padding: 1em;
+    border: 1px solid #313d4f;
+}
+.news-info {
+  
+    background-color: #273142;
+    
+}
+.employee-item {
+    color: white;
+    background-color: #273142;
+    
+}
+.gap-right {
+    margin-right: 20px;
+}
+
+.btn-danger {
+    background-color: #b2191f;
+    border-color: #ed1c24;
+}
+
+    .btn-danger:hover {
+        background-color: #ed1c24;
+        border-color: #ed1c24;
+    }
+
+.btn-primary {
+    background-color: #265a87;
+    border-color: #259cf3;
+}
+
+    .btn-primary:hover {
+        background-color: #259cf3;
+        border-color: #259cf3;
+    }
+.btn-secondary {
+    background-color: #273142;
+    border-color: #313d4f;
+}
+.btn-secondary:hover {
+        background-color: #323e50;
+        border-color: #313d4f;
+}
+
+.nav-link-active {
+    color: #1b92ed;
+}
+
+
+a {
+    color: #78828c;
+}
+    a:hover {
+        color: white;
+    }
+
+
+.form-control {
+    background-color: #273244;
+    border-color: #313d4f;
+}
+    .form-control:focus {
+        color: white;
+        background-color: #273244;
+        border-color: #1b92ed;
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    color:white;
+    background-color: #273244;
+    border-color: #1b92ed;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.chat 
+{
+    min-height:625px;
+}

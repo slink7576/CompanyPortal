@@ -1,0 +1,14 @@
+﻿
+@using Microsoft.AspNetCore.Identity;
+@model IEnumerable<ApplicationUser>
+<div class="container">
+    @foreach (var user in Model)
+    {
+
+        <br />
+        <label>@user.Email</label>
+
+
+
+    }
+</div>

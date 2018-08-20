@@ -1,0 +1,141 @@
+﻿body {
+    color: #354052;
+    background-color: #eff3f6;
+}
+
+hr {
+    background-color: #259cf3;
+    height: 1px;
+}
+
+.navbar {
+    background-color: #ffffff;
+}
+
+.pagination-but-color-inactive {
+    color: #ced0da;
+    background-color: #ffffff;
+    border-color: #e6eaee;
+}
+
+.pagination-but-color-active {
+    color: #354052;
+    background-color: #ffffff;
+    border-color: #e6eaee;
+}
+
+.btn-info {
+    color: #78828c;
+    background-color: #273142;
+    border: 0;
+}
+
+    .btn-info:hover, .btn-info:active:focus, .btn-info:focus, .btn-info:active {
+        color: white !important;
+        background-color: #273142 !important;
+        border: 0 !important;
+        box-shadow: none !important;
+    }
+
+.img-thumbnail {
+    border-radius: 10px;
+    border: 1px solid #313d4f;
+    background-color: #273142;
+    overflow: auto;
+}
+
+.thumbnail img {
+    height: auto;
+    display: block;
+}
+
+.pagination-but-color-active:hover, .pagination-but-color-inactive:hover {
+    color: black;
+}
+
+.news-item {
+    color: #354052;
+    background-color: #ffffff;
+    padding: 1em;
+    border: 1px solid #e6eaee;
+}
+
+.news-info {
+    background-color: #273142;
+}
+
+.employee-item {
+    color: #354052;
+    background-color: #ffffff;
+}
+
+.gap-right {
+    margin-right: 20px;
+}
+
+.btn-primary {
+    color: #259cf3;
+    background-color: #ffffff;
+    border-color: #259cf3;
+}
+
+    .btn-primary:hover {
+        background-color: #259cf3;
+        border-color: #259cf3;
+    }
+
+.btn-secondary {
+    color: #8f96a1;
+    background-color: #e9edf1;
+    border-color: #ced0da;
+}
+
+    .btn-secondary:hover {
+        color: #354052;
+        background-color: #f6f8fa;
+        border-color: #ced0da;
+    }
+
+.nav-link-active {
+    color: #1b92ed;
+}
+
+
+a {
+    color: #78828c;
+}
+.text-light {
+    color:red;
+}
+    a:hover {
+        color: #259cf3;
+    }
+
+
+.form-control {
+    background-color: #e9edf1;
+    border-color: #8f96a1;
+}
+
+    .form-control:focus {
+        color: white;
+        background-color: #ffffff;
+        border-color: #ced0da;
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    color: white;
+    background-color: #273244;
+    border-color: #1b92ed;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}

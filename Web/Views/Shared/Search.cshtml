@@ -1,0 +1,32 @@
+﻿<form asp-action="Index">
+    <div class="input-group">
+
+       
+
+        <div class="input-group-prepend">
+
+            <a href="@Url.Action("Index", "Account", new { desc = true })" class="btn btn-secondary"> <i class="fas fa-sort-alpha-down"></i></a>
+
+
+        </div>
+
+
+        <input type="text" name="name" class="form-control" placeholder="John" required>
+
+
+        <div class="input-group-append">
+
+
+            <button type="submit" typeof="submit" class="btn btn-secondary">
+
+                <i class="fa fa-search">
+
+                </i>
+
+            </button>
+
+        </div>
+
+
+    </div>
+</form>

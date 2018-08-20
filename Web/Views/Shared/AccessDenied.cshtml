@@ -1,0 +1,17 @@
+﻿@model string
+
+
+
+<div class="container text-center mt-2">
+    @if (Model == null)
+    {
+    <h5 class="text-danger"> <i class="fas fa-exclamation-triangle"></i>&nbsp;Access denied</h5>
+
+    }
+    else
+    {
+
+    <label class="text-danger"><i class="fas fa-exclamation-triangle"></i>&nbsp;@Model</label>
+    }
+
+</div>

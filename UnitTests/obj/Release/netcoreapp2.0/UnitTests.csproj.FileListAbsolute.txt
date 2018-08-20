@@ -1,0 +1,17 @@
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\bin\Release\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\bin\Release\netcoreapp2.0\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\bin\Release\netcoreapp2.0\xunit.runner.utility.netcoreapp10.dll
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\bin\Release\netcoreapp2.0\UnitTests.deps.json
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\bin\Release\netcoreapp2.0\UnitTests.runtimeconfig.json
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\bin\Release\netcoreapp2.0\UnitTests.runtimeconfig.dev.json
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\bin\Release\netcoreapp2.0\UnitTests.dll
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\bin\Release\netcoreapp2.0\UnitTests.pdb
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\bin\Release\netcoreapp2.0\ApplicationCore.dll
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\bin\Release\netcoreapp2.0\ApplicationCore.pdb
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\obj\Release\netcoreapp2.0\UnitTests.csprojAssemblyReference.cache
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\obj\Release\netcoreapp2.0\UnitTests.csproj.CoreCompileInputs.cache
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\obj\Release\netcoreapp2.0\UnitTests.AssemblyInfoInputs.cache
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\obj\Release\netcoreapp2.0\UnitTests.AssemblyInfo.cs
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\obj\Release\netcoreapp2.0\UnitTests.csproj.CopyComplete
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\obj\Release\netcoreapp2.0\UnitTests.dll
+C:\Users\Ыдш\source\repos\CompanyPortal\UnitTests\obj\Release\netcoreapp2.0\UnitTests.pdb

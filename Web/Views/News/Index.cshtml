@@ -1,0 +1,84 @@
+﻿@model NewsItemListViewModel
+
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> _userManager
+
+<script asp-src-include="lib/scripts/Bundle.min.js"></script>
+
+<div class="container pt-2">
+
+    @if (User.Identity.Name != null && await _userManager.IsInRoleAsync(await _userManager.FindByNameAsync(User.Identity.Name), "Admin"))
+    {
+        @Html.Partial("NewsBar")
+    }
+
+
+
+
+    @if (Model.News.Count() == 0)
+    {
+        <div class="text-center">
+            <label>
+                No news
+            </label>
+        </div>
+
+
+    }
+    else
+    {
+
+        @for (int i = 0; i < Model.News.Count(); i++)
+        {
+            @Html.Partial("NewsSummary", Model.News.ElementAt(i))
+            @if (i != Model.News.Count() - 1)
+            {
+
+
+            }
+
+
+        }
+        <div page-model="@Model.PagingInfo" page-action="Index"
+             page-classes-enabled="true"
+             page-class="btn" page-class-normal="pagination-but-color-inactive"
+             page-class-selected="pagination-but-color-active"
+             class="btn-group float-right mt-1 mb-4">
+
+        </div>
+
+    }
+
+
+
+</div>
+
+<script>
+    function Like(id)
+    {
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("Like")',
+            data: 'Id=' + id,
+            success: function (data) {
+                var c = parseInt($('label#' + id).text())  + 1;
+                $('label#' + id).text(c);
+            },
+            error: function (request, status, error) {
+
+                if (error == 'Unauthorized') {
+                    alert('You need to login first!');
+                    window.location.replace("@Url.Action("Login", "Account")");
+
+                }
+                else
+                {
+                    alert(request.responseText);
+                }
+
+
+                 }
+        });
+    }
+</script>

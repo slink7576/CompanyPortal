@@ -1,0 +1,127 @@
+﻿@model string
+
+
+<div class="container">
+
+    <div class=" p-3 news-info chat">
+        <p><i class="fas fa-comment-alt mr-2"></i><span class="lead">Welcome to chat</span></p>
+
+        <hr />
+        <div id="chatholder">
+
+        </div>
+
+    </div>
+
+    <hr />
+ 
+
+    <div id="inputForm">
+        <div class="input-group mb-2">
+            <div class="input-group-prepend ">
+                <button type="button" onclick="clearChat()" class="btn btn-secondary">
+
+                    <i class="fas fa-broom"></i>
+                </button>
+            </div>
+            <div class="input-group-append ">
+                <button type="button" onclick="rollDice()" class="btn btn-secondary">
+
+                    <i class="fas fa-dice"></i>
+                </button>
+            </div>
+            <div class="input-group-append ">
+                <button type="button" onclick="appendSmile()" class="btn btn-secondary">
+
+                    <i class="fas fa-smile"></i>
+                </button>
+            </div>
+            
+
+
+        </div>
+
+
+            <div class="input-group mb-3">
+                <input type="text" id="message" class="form-control" />
+
+                <div class="input-group-append ">
+                    <button type="button" id="sendBtn" class="btn btn-primary">
+                        <i class="fas fa-location-arrow"></i>
+
+
+                    </button>
+                </div>
+
+
+            </div>
+        </div>
+
+        <script src="~/lib/signalr/dist/browser/signalr.min.js"></script>
+        <script>
+        function clearChat() {
+            amount = 0;
+            $("#chatholder").text("");
+
+
+        }
+            function rollDice() {
+
+                hubConnection.invoke("Send", '@Model rolled ' + Math.floor((1 + (Math.random() * 6))));
+
+            }
+            function appendSmile() {
+                let tmp = $("#message").val();
+                $("#message").val(tmp + ':)');
+                
+            }
+
+        let hubUrl = '/chatHub';
+        let amount = 0;
+    const hubConnection = new signalR.HubConnectionBuilder()
+        .withUrl(hubUrl)
+        .configureLogging(signalR.LogLevel.Information)
+            .build();
+        hubConnection.start();
+
+        hubConnection.on("Send", function (data) {
+           if (amount == 13) {
+
+               clearChat();
+            }
+            amount++;
+            $("#chatholder").append('<p>' + data + '</p>');
+        });
+
+        $('#message').bind("enterKey", function (e) {
+            sendMessage();
+        });
+        $('#message').keyup(function (e) {
+            if (e.keyCode == 13) {
+                $(this).trigger("enterKey");
+            }
+        });
+
+        $("#sendBtn").bind("click", function (e) {
+            sendMessage();
+        });
+
+        function sendMessage()
+        {
+
+
+            if ($("#message").val() != "") {
+
+            let message = '@Model: ' + $("#message").val();
+                hubConnection.invoke("Send", message);
+                $("#message").val("");
+            }
+
+
+        }
+
+
+
+        </script>
+    </div>
+

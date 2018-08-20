@@ -1,0 +1,9 @@
+C:\Users\Ыдш\source\repos\CompanyPortal\ApplicationCore\bin\Release\netcoreapp2.0\ApplicationCore.deps.json
+C:\Users\Ыдш\source\repos\CompanyPortal\ApplicationCore\bin\Release\netcoreapp2.0\ApplicationCore.dll
+C:\Users\Ыдш\source\repos\CompanyPortal\ApplicationCore\bin\Release\netcoreapp2.0\ApplicationCore.pdb
+C:\Users\Ыдш\source\repos\CompanyPortal\ApplicationCore\obj\Release\netcoreapp2.0\ApplicationCore.csprojAssemblyReference.cache
+C:\Users\Ыдш\source\repos\CompanyPortal\ApplicationCore\obj\Release\netcoreapp2.0\ApplicationCore.csproj.CoreCompileInputs.cache
+C:\Users\Ыдш\source\repos\CompanyPortal\ApplicationCore\obj\Release\netcoreapp2.0\ApplicationCore.AssemblyInfoInputs.cache
+C:\Users\Ыдш\source\repos\CompanyPortal\ApplicationCore\obj\Release\netcoreapp2.0\ApplicationCore.AssemblyInfo.cs
+C:\Users\Ыдш\source\repos\CompanyPortal\ApplicationCore\obj\Release\netcoreapp2.0\ApplicationCore.dll
+C:\Users\Ыдш\source\repos\CompanyPortal\ApplicationCore\obj\Release\netcoreapp2.0\ApplicationCore.pdb

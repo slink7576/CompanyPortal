@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Position>
+
+
+<a class="nav-link"
+   asp-action="Index"
+   asp-controller="Account"
+   asp-route-page=""
+   asp-route-position=>All</a>
+<ul class="nav flex-column">
+
+
+    @foreach (Position pos in Model)
+    {
+        <li class="nav-item">
+            <a class="nav-link @(pos.ToString() == ViewBag.SelectedPosition ? "nav-link-active" : "nav-link")"
+               asp-action="Index"
+               asp-controller="Account"
+               asp-route-position=@pos
+               asp-route-page="1">@pos</a>
+        </li>
+
+
+    }
+</ul>
+
+

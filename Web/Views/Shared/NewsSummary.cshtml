@@ -1,0 +1,113 @@
+﻿
+@model NewsItem
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> _userManager
+
+<div class="mb-1 mt-3  pl-0 news-item row rounded">
+    <div class="col-md-2">
+        <img class=" pull-left gap-right img-thumbnail img-circle" src="@(Model.PhotoURL == null ? "/data/news/photo/default.jpg" : Model.PhotoURL) " />
+    </div>
+    <div class="col-md-8 mr-3">
+        <a asp-action="Info"
+           asp-route-ReturnUrl="@ViewBag.ReturnUrl"
+           asp-route-id="@Model.Id">
+            <h5><u> @Model.Header</u></h5>
+        </a>
+        @Model.Body
+
+    </div>
+
+    <div class="col-md-12 mt-2 row">
+        <div class="col-md-4 row text-center">
+
+            @if (User.Identity.Name != null && await _userManager.IsInRoleAsync(await _userManager.FindByNameAsync(User.Identity.Name), "Admin"))
+            {
+                <form asp-action="Delete" method="post" class="ml-1">
+                    <button type="button" class="btn btn-info ml-1" onclick="Like(@Model.Id)">
+
+                        <i class="fa fa-thumbs-up"></i>
+                    </button>
+
+                    <a class="btn btn-info"
+                       asp-action="Info"
+                       asp-route-ReturnUrl="@ViewBag.ReturnUrl"
+                       asp-route-id="@Model.Id">
+                        <i class="fas fa-chart-bar"></i>
+                    </a>
+
+
+
+                    <a class="btn btn-info"
+                       asp-action="Create"
+                       asp-route-id="@Model.Id">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <input type="hidden" name="Id" id="Id" value="@Model.Id" />
+                    <button class="btn btn-info" type="submit">
+
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+
+
+
+
+
+                </form>
+
+            }
+            else
+            {
+                <div class="pl-3">
+                    <button type="button" class="btn btn-info ml-4" onclick="Like(@Model.Id)">
+
+                        <i class="fa fa-thumbs-up"></i>
+                    </button>
+
+                    <a class="btn btn-info"
+                       asp-action="Info"
+                       asp-route-ReturnUrl="@ViewBag.ReturnUrl"
+                       asp-route-id="@Model.Id">
+                        <i class="fas fa-chart-bar"></i>
+                    </a>
+                </div>
+               
+
+            }
+
+
+
+
+
+
+
+        </div>
+
+        <div class="col-md-8 row">
+            <div class="col-md-8">
+
+                <label class="text-secondary ">
+                    posted&nbsp;<label class="date">@Model.Created</label>
+                    <label class=" text-light">
+                        &nbsp;by&nbsp;@(Model.Author == null ? "Admin" : Model.Author)
+                    </label>
+
+                </label>
+            </div>
+            <div class="col-md-4">
+                <label id="@Model.Id" class="float-right ml-2">@Model.TotalLikes</label>
+                <i class="fas fa-heart float-right pt-1"></i>
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+</div>
+

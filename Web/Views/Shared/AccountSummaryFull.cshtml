@@ -1,0 +1,52 @@
+﻿
+@model Employee
+<div class="container p-5 news-info">
+
+    <div class="ml-0 mb-2">
+
+
+        <a class="btn btn-info" href="@ViewBag.ReturnUrl">
+
+            <i class="fas fa-arrow-left"></i>
+        </a>
+
+
+    </div>
+    <hr />
+
+    @if (Model == null)
+    {
+        <label>Not found</label>
+
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-md-4">
+
+
+                <img class="img-thumbnail d-block mx-auto" src="@(Model.PhotoURL == null ? "/data/news/photo/default.jpg" : Model.PhotoURL) " />
+
+            </div>
+
+
+            <div class="col-md-8 text-left mb-3">
+                <h5>@Model.Name @Model.Surname</h5>
+                <label class="text-secondary float-right">@Model.Email</label>
+                @Model.PhoneNumber
+
+            </div>
+
+        </div>
+
+
+
+
+        <hr />
+
+
+
+
+    }
+
+</div>

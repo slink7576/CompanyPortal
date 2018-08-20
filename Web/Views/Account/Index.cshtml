@@ -1,0 +1,58 @@
+﻿
+@model EmployeeListViewModel
+
+<div class="row">
+
+    <nav class="col-md-2 p-0">
+        <div class="sidebar-sticky">
+            @await Component.InvokeAsync("NavigationMenu")
+        </div>
+
+    </nav>
+    <div class="col-md-9 p-4">
+
+        <div class="mb-4">
+
+
+            @Html.Partial("Search")
+
+        </div>
+
+        @if (Model.Employers.Count() == 0)
+        {
+            <div class="text-center">
+                <label>
+                    Not found any employee by
+                    established data
+                </label>
+            </div>
+            
+
+        }
+        else
+        {
+            <div class="news-item rounded mb-2">
+
+
+                @foreach (var person in Model.Employers)
+                {
+                    @Html.Partial("AccountSummaryShort", person)
+
+
+                }
+            </div>
+        }
+
+
+        <div page-model="@Model.PagingInfo" page-action="Index"
+             page-classes-enabled="true"
+             page-class="btn" page-class-normal="pagination-but-color-inactive"
+             page-class-selected="pagination-but-color-active"
+             class="btn-group float-right"
+             page-url-position="@Model.CurrentPosition"
+             page-url-desc="@Model.IsDesc">
+
+        </div>
+    </div>
+</div>
+

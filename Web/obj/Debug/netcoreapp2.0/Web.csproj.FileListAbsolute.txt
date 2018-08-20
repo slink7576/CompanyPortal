@@ -1,0 +1,16 @@
+C:\Users\Ыдш\source\repos\CompanyPortal\Web\bin\Debug\netcoreapp2.0\ApplicationCore.dll
+C:\Users\Ыдш\source\repos\CompanyPortal\Web\bin\Debug\netcoreapp2.0\Infrastructure.dll
+C:\Users\Ыдш\source\repos\CompanyPortal\Web\obj\Debug\netcoreapp2.0\Web.csproj.CoreCompileInputs.cache
+C:\Users\Ыдш\source\repos\CompanyPortal\Web\obj\Debug\netcoreapp2.0\Web.AssemblyInfoInputs.cache
+C:\Users\Ыдш\source\repos\CompanyPortal\Web\obj\Debug\netcoreapp2.0\Web.AssemblyInfo.cs
+C:\Users\Ыдш\source\repos\CompanyPortal\Web\bin\Debug\netcoreapp2.0\Web.deps.json
+C:\Users\Ыдш\source\repos\CompanyPortal\Web\bin\Debug\netcoreapp2.0\Web.runtimeconfig.json
+C:\Users\Ыдш\source\repos\CompanyPortal\Web\bin\Debug\netcoreapp2.0\Web.runtimeconfig.dev.json
+C:\Users\Ыдш\source\repos\CompanyPortal\Web\bin\Debug\netcoreapp2.0\Web.dll
+C:\Users\Ыдш\source\repos\CompanyPortal\Web\bin\Debug\netcoreapp2.0\Web.pdb
+C:\Users\Ыдш\source\repos\CompanyPortal\Web\bin\Debug\netcoreapp2.0\Infrastructure.pdb
+C:\Users\Ыдш\source\repos\CompanyPortal\Web\bin\Debug\netcoreapp2.0\ApplicationCore.pdb
+C:\Users\Ыдш\source\repos\CompanyPortal\Web\obj\Debug\netcoreapp2.0\Web.dll
+C:\Users\Ыдш\source\repos\CompanyPortal\Web\obj\Debug\netcoreapp2.0\Web.pdb
+C:\Users\Ыдш\source\repos\CompanyPortal\Web\obj\Debug\netcoreapp2.0\Web.csprojAssemblyReference.cache
+C:\Users\Ыдш\source\repos\CompanyPortal\Web\obj\Debug\netcoreapp2.0\Web.csproj.CopyComplete
