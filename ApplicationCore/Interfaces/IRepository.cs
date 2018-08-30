@@ -12,6 +12,7 @@ namespace ApplicationCore.Interfaces
         T GetById(int id);
         T GetSingleBySpec(ISpecification<T> spec);
         IEnumerable<T> ListAll();
+        IQueryable<T> ListAllQuery();
         IEnumerable<T> List(ISpecification<T> spec);
         T Add(T entity);
         void Update(T entity);

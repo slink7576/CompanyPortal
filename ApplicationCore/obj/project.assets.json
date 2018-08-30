@@ -664,26 +664,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ыдш\\.nuget\\packages\\": {},
+    "C:\\Users\\Slink\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ыдш\\source\\repos\\CompanyPortal\\ApplicationCore\\ApplicationCore.csproj",
+      "projectUniqueName": "C:\\Projects\\CompanyPortal\\ApplicationCore\\ApplicationCore.csproj",
       "projectName": "ApplicationCore",
-      "projectPath": "C:\\Users\\Ыдш\\source\\repos\\CompanyPortal\\ApplicationCore\\ApplicationCore.csproj",
-      "packagesPath": "C:\\Users\\Ыдш\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ыдш\\source\\repos\\CompanyPortal\\ApplicationCore\\obj\\",
+      "projectPath": "C:\\Projects\\CompanyPortal\\ApplicationCore\\ApplicationCore.csproj",
+      "packagesPath": "C:\\Users\\Slink\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\CompanyPortal\\ApplicationCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ыдш\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Slink\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -710,7 +707,7 @@
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
           }
         },

@@ -28,18 +28,15 @@ namespace Web.Controllers
 
         public async Task<IActionResult> Index(int page = 1)
         {
-            var news = await _newsViewModelService.ListAllAsync();
             var view = new NewsItemListViewModel
             {
-                News = news.OrderBy(c => c.Created).Reverse()
-                .Skip((page - 1) * PageSize)
-                .Take(PageSize),
+                News = _newsViewModelService.ListByPage(PageSize, page),
                 PagingInfo = new PagingInfo
                 {
 
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalItems = news.Count()
+                    TotalItems = _newsViewModelService.GetAllCount()
                 },
             };
             ViewBag.ReturnUrl = Request.Path;

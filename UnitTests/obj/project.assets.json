@@ -5963,26 +5963,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ыдш\\.nuget\\packages\\": {},
+    "C:\\Users\\Slink\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ыдш\\source\\repos\\CompanyPortal\\UnitTests\\UnitTests.csproj",
+      "projectUniqueName": "C:\\Projects\\CompanyPortal\\UnitTests\\UnitTests.csproj",
       "projectName": "UnitTests",
-      "projectPath": "C:\\Users\\Ыдш\\source\\repos\\CompanyPortal\\UnitTests\\UnitTests.csproj",
-      "packagesPath": "C:\\Users\\Ыдш\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ыдш\\source\\repos\\CompanyPortal\\UnitTests\\obj\\",
+      "projectPath": "C:\\Projects\\CompanyPortal\\UnitTests\\UnitTests.csproj",
+      "packagesPath": "C:\\Users\\Slink\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\CompanyPortal\\UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ыдш\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Slink\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5995,8 +5992,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\Ыдш\\source\\repos\\CompanyPortal\\ApplicationCore\\ApplicationCore.csproj": {
-              "projectPath": "C:\\Users\\Ыдш\\source\\repos\\CompanyPortal\\ApplicationCore\\ApplicationCore.csproj"
+            "C:\\Projects\\CompanyPortal\\ApplicationCore\\ApplicationCore.csproj": {
+              "projectPath": "C:\\Projects\\CompanyPortal\\ApplicationCore\\ApplicationCore.csproj"
             }
           }
         }
@@ -6010,26 +6007,26 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "xunit.runner.visualstudio": {
+          "Microsoft.NET.Test.Sdk": {
             "target": "Package",
-            "version": "2.3.1"
-          },
-          "Moq": {
-            "target": "Package",
-            "version": "4.9.0"
+            "version": "[15.7.0, )"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "2.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
+          },
+          "Moq": {
+            "target": "Package",
+            "version": "[4.9.0, )"
           },
           "xunit": {
             "target": "Package",
-            "version": "2.3.1"
+            "version": "[2.3.1, )"
           },
-          "Microsoft.NET.Test.Sdk": {
+          "xunit.runner.visualstudio": {
             "target": "Package",
-            "version": "15.7.0"
+            "version": "[2.3.1, )"
           }
         },
         "imports": [

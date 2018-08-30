@@ -6,3 +6,12 @@ C:\Users\Ыдш\source\repos\CompanyPortal\ApplicationCore\bin\Debug\netcoreapp2
 C:\Users\Ыдш\source\repos\CompanyPortal\ApplicationCore\bin\Debug\netcoreapp2.0\ApplicationCore.pdb
 C:\Users\Ыдш\source\repos\CompanyPortal\ApplicationCore\obj\Debug\netcoreapp2.0\ApplicationCore.dll
 C:\Users\Ыдш\source\repos\CompanyPortal\ApplicationCore\obj\Debug\netcoreapp2.0\ApplicationCore.pdb
+C:\Projects\CompanyPortal\ApplicationCore\bin\Debug\netcoreapp2.0\ApplicationCore.deps.json
+C:\Projects\CompanyPortal\ApplicationCore\bin\Debug\netcoreapp2.0\ApplicationCore.dll
+C:\Projects\CompanyPortal\ApplicationCore\bin\Debug\netcoreapp2.0\ApplicationCore.pdb
+C:\Projects\CompanyPortal\ApplicationCore\obj\Debug\netcoreapp2.0\ApplicationCore.csprojAssemblyReference.cache
+C:\Projects\CompanyPortal\ApplicationCore\obj\Debug\netcoreapp2.0\ApplicationCore.csproj.CoreCompileInputs.cache
+C:\Projects\CompanyPortal\ApplicationCore\obj\Debug\netcoreapp2.0\ApplicationCore.AssemblyInfoInputs.cache
+C:\Projects\CompanyPortal\ApplicationCore\obj\Debug\netcoreapp2.0\ApplicationCore.AssemblyInfo.cs
+C:\Projects\CompanyPortal\ApplicationCore\obj\Debug\netcoreapp2.0\ApplicationCore.dll
+C:\Projects\CompanyPortal\ApplicationCore\obj\Debug\netcoreapp2.0\ApplicationCore.pdb

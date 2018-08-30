@@ -22,10 +22,21 @@ namespace Web.Services
             _newsService = newsService;
             _employeeRepository = employeeRepository;
         }
+        public List<NewsItem> ListByPage(int pageSize, int page)
+        {
+            return _repositoryNews.ListAllQuery().OrderByDescending(c => c.Created)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize).ToList();
+        }
     
         public async Task<List<NewsItem>> ListAllAsync()
         {
             return await _repositoryNews.ListAllAsync();
+        }
+
+        public int GetAllCount()
+        {
+            return _repositoryNews.ListAll().Count();
         }
 
         public async Task AddAsync(NewsItem news)

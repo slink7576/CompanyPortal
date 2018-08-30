@@ -19,7 +19,12 @@ namespace Infrastructure.Data
             _dbContext = dbContext;
         }
 
-      
+
+        public IQueryable<T> ListAllQuery()
+        {
+            return _dbContext.Set<T>().AsQueryable<T>();
+        }
+
         public virtual T GetById(int id)
         {
             return _dbContext.Set<T>().Find(id);
